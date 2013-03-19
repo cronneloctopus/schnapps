@@ -1,0 +1,61 @@
+.dir_div {
+    margin-left: 10px;
+}
+
+#side-bar, #container {
+    float: left;
+    padding: 20px;
+}
+
+#side-bar {
+    width: 300px;
+    border-right: 4px solid #eeeeee;
+}
+
+#play_div {
+    border: 0px solid #888;
+    color: #888;
+    padding: 10px;
+}
+
+ul {
+    list-style: none;
+}
+
+hr {
+    border: 2px solid #eeeeee;
+}
+
+.apps_text {
+     color: #0088cc;
+}
+
+#video_player, #audio_player {
+    margin-bottom: 15px;
+}
+
+
+/* dir link styles */
+a.dir:link { color: #0088cc; text-decoration: none; font-weight: bold;}
+a.dir:visited  { color: #0088cc; text-decoration: none; font-weight: bold;}
+a.dir:active   { color: #0088cc; text-decoration: none; font-weight: bold;}
+a.dir:hover    { color: #0088cc; text-decoration: none; font-weight: bold;}
+
+/* default file link styles */
+a.file:link { color: #888; text-decoration: none; margin-left: 10px; }
+a.file:visited  { color: #888; text-decoration: none; margin-left: 10px; }
+a.file:active   { color: #888; text-decoration: none; margin-left: 10px; }
+a.file:hover    { color: #888; text-decoration: none; margin-left: 10px; }
+
+
+/* audio link styles */
+a.audio:link { color: green; text-decoration: none;  }
+a.audio:visited  { color: green; text-decoration: none;  }
+a.audio:active   { color: green; text-decoration: none;  }
+a.audio:hover    { color: green; text-decoration: none; border-bottom: 1px dotted; }
+
+/* video link styles */
+a.video:link { color: green; text-decoration: none; }
+a.video:visited  { color: green; text-decoration: none; }
+a.video:active   { color: green; text-decoration: none; }
+a.video:hover    { color: green; text-decoration: none; }

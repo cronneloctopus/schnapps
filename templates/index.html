@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+
+  
+
+  <div id="side-bar">
+  <ul> 
+  {% for dir in dir_list %}
+      <li><a class="dir" href="{{ dir }}">/{{ dir }}</a>
+          <div class="dir_div" style="display:none;"></div>
+      </li>
+  {% endfor %}
+  </ul>
+
+  <ul> 
+  {% for file in files %}
+      <li><a class="file" href="{{ file.name }}">{{ file.name }}</a></li>
+  {% endfor %}
+  </ul>
+  </div>
+  <div id="container">
+    <h1>Let's try some Schn<span class="apps_text">app</span>s!</h1>
+
+    <div id="play_div">
+
+
+    <div class="media_holder">
+          <video id="video_player" controls style="display:none;">
+            <!-- mp4 -->  
+            <source id="video_mp4" src="" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+            <!-- webm (FF)-->
+            <source id="video_webm" src="" type='video/webm; codecs="vp8, vorbis"' />
+            {# comment FLASH
+             <object type="application/x-shockwave-flash" data="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" width="300" height="160">
+               <param name="movie" value="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" />
+               <param name="allowFullScreen" value="true" />
+               <param name="wmode" value="transparent" />
+               <param name="flashvars" value='config={"clip":{"url":"HTML5Sample_flv.flv","autoPlay":false,"autoBuffering":true}}' />
+              </object>
+             endcomment #}
+          </video>
+          <p id="video_message" class"now_playing"></p>
+
+
+          <audio id="audio_player" controls style="display:none;">
+            <source id="audio_ogg" src="" type="audio/ogg">
+            <source id="audio_mp3" src="" type="audio/mpeg"> 
+          </audio>
+          <p id="audio_message" class"now_playing"></p>
+    </div>
+
+
+  </div>  
+
+{% endblock %}
