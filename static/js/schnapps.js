@@ -36,7 +36,7 @@ $(document).ready(function(){
               var player = $("#audio_ogg")
             }
 
-            player.attr('src', 'http://localhost:5000/get_media/' + path);
+            player.attr('src', '/get_media/' + path);
             
             // only toggle the player if not already visible
             if ($('#audio_player').attr('style') == 'display:none;') {

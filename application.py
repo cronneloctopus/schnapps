@@ -10,9 +10,10 @@ except ImportError:
     ROOT_DIR = '/media/'
 
 app = Flask(__name__)
+app.debug = True
 
-SERVER_NAME = 'localhost'
-SERVER_PORT = 5000
+#SERVER_NAME = 'localhost'
+#SERVER_PORT = 5000
 
 
 video_list = ['.mp4', '.webm', '.h264']
@@ -49,18 +50,18 @@ def get_file_ext(file_list):
 
 @app.route('/')
 def index():
-    ###dirs = []
+    dirs = []
     # define root dir
     root = ROOT_DIR
-    # get directories
+    # et directories
     dir_list = [name for name in os.listdir(
         root) if os.path.isdir(os.path.join(root, name))]
-    """
+
     for d in dir_list:
-        size = os.path.getsize('/media/' + d)
-        if size > 4096:
-            dirs.append(d)
-    """
+        #size = os.path.getsize('/media/' + d)
+        #if size > 4096:
+        dirs.append(d)
+
     # get files
     file_list = [name for name in os.listdir(
         root) if os.path.isfile(os.path.join(root, name))]
