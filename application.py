@@ -11,6 +11,7 @@ except ImportError:
 
 app = Flask(__name__)
 app.debug = True
+app.use_x_sendfile = True
 
 #SERVER_NAME = 'localhost'
 #SERVER_PORT = 5000
@@ -98,9 +99,13 @@ def get_dir(path):
 
 @app.route('/get_media/<path:filename>', methods=['GET'])
 def get_media(filename):
-    return send_from_directory('/media/', filename)
-    #return filename
+    response = send_from_directory('/media/', filename)
+    header = response.headers.pop('X-SendFile')
+    response.headers['X-Accel-Redirect'] = header
+    return response
 
 
 if __name__ == '__main__':
-    app.run(SERVER_NAME, SERVER_PORT, debug=True)
+    # Bind to PORT if defined, otherwise default to 5000.
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
